@@ -1,0 +1,18 @@
+[
+    {
+        "orders" : "Sales",
+        "price" : "3450.99 SAR"
+    },
+    {
+        "orders" : "Orders",
+        "price" : "1890 SRA"
+    },
+    {
+        "orders" : "Visitors",
+        "price" : "352 SAR"
+    },
+    {
+        "orders" : "Conversion Rate",
+        "price" : "3.75%"
+    }
+]

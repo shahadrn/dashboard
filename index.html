@@ -41,9 +41,9 @@
         </ul>
       </li>
       <li class="nav-item dropdown w-100">
-        <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button"
+        <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown2" role="button"
           data-toggle="dropdown" aria-expanded="false"><i class="fas faf fa-chart-line"></i>Reports</a>
-        <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+        <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown2">
           <li><a href="#" class="dropdown-item text-light pl-4 p-2">Service 01</a></li>
           <li><a href="#" class="dropdown-item text-light pl-4 p-2">Service 02</a></li>
         </ul>
@@ -61,7 +61,7 @@
     <div class="container-fluid">
       <div class="row col-nav">
         <div class="col-md-6">
-          <button class="btn" id="menu-btn"><i class="fas fa-align-justify m-1"></i>
+          <button class="btn menu-btn" aria-label="button"><i class="fas fa-align-justify m-1"></i>
           </button>
         </div>
         <div class="col-md-6">
@@ -70,12 +70,16 @@
               <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..."
                 aria-describedby="button-addon2">
               <button class="btn bg-danger bg-gradient" type="button" id="button-addon2">
-                <i class="fas fa-search"></i></button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg></button>
             </div>
             <div class="dropdown">
               <button class="btn dropdown-toggle text-light" type="button" id="dropdownMenuButton1"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 20 20">
+                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                </svg>
               </button>
               <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item text-light text-center" href="#">Information</a></li>
@@ -89,62 +93,18 @@
         <h1>Dashboard</h1>
         <p>Dashboard</p>
       </div>
-      <!--Cards-->
       <div class="mainContentCard">
-        <div class="row m-3">
-          <div class="col-md-3 my-2">
-            <div class="card bg-danger bg-gradient m-15 text-center" style="max-width: 18rem;">
-              <div class="card-body text-light">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-text">3450.00SAR</p>
-              </div>
-              <div class="card-footer text-left"><button type="button" class="btn btn-link text-light">View
-                  Details</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 my-2">
-            <div class="card bg-danger bg-gradient m-15 text-center" style="max-width: 18rem;">
-              <div class="card-body text-light">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-text">3450.00SAR</p>
-              </div>
-              <div class="card-footer text-left"><button type="button" class="btn btn-link text-light">View
-                  Details</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 my-2">
-            <div class="card bg-danger bg-gradient m-15 text-center" style="max-width: 18rem;">
-              <div class="card-body text-light">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-text">3450.00SAR</p>
-              </div>
-              <div class="card-footer text-left"><button type="button" class="btn btn-link text-light">View
-                  Details</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 my-2">
-            <div class="card bg-danger bg-gradient m-15 text-center" style="max-width: 18rem;">
-              <div class="card-body text-light">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-text">3450.00SAR</p>
-              </div>
-              <div class="card-footer text-left"><button type="button" class="btn btn-link text-light">View
-                  Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
+       <div class="row m-3" id="colCard">
+         <!--Load Cards-info JSON-->
+       </div>
+        
+        <!--Charts-->
         <div class="row m-3">
           <div class="col-md-6 my-2">
             <div class="card">
               <div class="card-header"><i class="fas faf fa-table"></i>Orders</div>
               <div class="card-body">
-                <div style="height: 300px">
-                  <canvas id="myAreaChart"></canvas>
-                </div>
+                  <canvas id="myAreaChart" class="sizeChart"></canvas>
               </div>
             </div>
           </div>
@@ -152,9 +112,7 @@
             <div class="card">
               <div class="card-header"><i class="far faf fa-eye"></i>Visitor</div>
               <div class="card-body">
-                <div style="height: 300px">
-                  <canvas id="myBarChart"></canvas>
-                </div>
+                  <canvas id="myBarChart" class="sizeChart"></canvas>
               </div>
             </div>
           </div>
@@ -164,19 +122,15 @@
             <div class="card">
               <div class="card-header"><i class="fas faf fa-map-marker-alt"></i>Visitors Citites</div>
               <div class="card-body">
-                <div style="height: 300px">
-                  <canvas id="myPieChart"></canvas>
-                </div>
+                  <canvas id="myPieChart" class="sizeChart"></canvas>
               </div>
             </div>
           </div>
           <div class="col-md-6 my-2">
             <div class="card">
-              <div class="card-header"><i class="fas faf fa-star"></i>Visitor</div>
+              <div class="card-header"><i class="fas faf fa-star"></i>Customers Rat</div>
               <div class="card-body">
-                <div style="height: 300px">
-                  <canvas id="myLinearChart"></canvas>
-                </div>
+                  <canvas id="myLinearChart" class="sizeChart"></canvas>
               </div>
             </div>
           </div>
@@ -186,7 +140,7 @@
             <div class="card">
               <div class="card-header"><i class="fas faf fa-users"></i>Customers</div>
               <div class="card-body">
-                <table id="data-table" class="display" style="width:100%">
+                <table id="data-table" class="display w-100">
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -206,10 +160,10 @@
     </div>
   </section>
 
-  <script src="//code.tidio.co/el9agz4pqfntbnidchvlswyoc7vokf2p.js" async></script>
+  <script src="http://code.tidio.co/el9agz4pqfntbnidchvlswyoc7vokf2p.js" async></script>
   <script src="js/scripts.js"></script>
   <script src="js/charts.js"></script>
   <script src="js/dataTable.js"></script>
-
+  <script src="js/card.js"></script>
 </body>
 </html>
