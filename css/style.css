@@ -116,3 +116,6 @@ body {
 .sizeChart {
     height: 300px;
 }
+.btnDetails {
+    background-color: #37315e !important;
+}
