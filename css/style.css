@@ -20,7 +20,18 @@ body {
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
+.navbar {
+    background-color: #37315e;
+}
 
+.navside {
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    margin-left: -300px;
+    background-color: #37315e;
+    transition: 0.4s;
+}
 .header-nrt {
     color: white;;
     text-decoration: none;
@@ -29,15 +40,10 @@ body {
     display: block;
 }
 
-.navbar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    margin-left: -300px;
-    background-color: #37315e;
-    transition: 0.4s;
+.header-nrt:hover {
+    color: white;
 }
-  
+
 .nav-link:active,
 .nav-link:focus,
 .nav-link:hover {
@@ -64,19 +70,14 @@ body {
     margin-right: 10px;
 }
 
-.login_info {
+.login-info {
     background-color: #6a206d49;
     color: white;
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 20px;
-}
-
-#button-addon2 {
-    border: none;
-    color: white;
-    background-color: #da4167;
+    margin: 50px;
 }
 
 .my-container {
@@ -97,25 +98,22 @@ body {
 }
 
 .menu-btn:focus {
-    box-shadow: 0 0 0 0.25rem #7952b344;
+    box-shadow: 0 0 0 0.25rem #7952b30e;
+}
+.menu-btn:hover {
+    color: white;
 }
 
-
-.col-nav {
-    background-color:#37315e;
-}
-
-.btn-link:hover {
-    font-size:17px;
- 
-}
-#colCard{
-    list-style: none;
+#button-addon2 {
+    border: none;
+    color: white;
+    background-color: #da4167;
 }
 
 .sizeChart {
     height: 300px;
 }
+
 .btnDetails {
-    background-color: #37315e !important;
+    background-color: #37315e;
 }
