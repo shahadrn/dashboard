@@ -15,9 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let containerCards = document.getElementById('colCard');
 function renderHtml(card) {  
-    let info = document.createElement('info');
 
-    info.innerHTML = `
+    let info = `
         <div class="col-md-3 my-2">
             <div class="card bg-danger bg-gradient m-15 text-center" style="max-width: 18rem;">
                 <div class="card-body text-light">
@@ -28,5 +27,5 @@ function renderHtml(card) {
             </div>
             </div>
         </div>`;
-        containerCards.appendChild(info);
+        containerCards.innerHTML +=info;
 }

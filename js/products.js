@@ -37,12 +37,12 @@ function renderHtml(prod) {
                         <p class="fs-4 font-weight-bolder">${prod.price}SAR</p>
                         <p class="text-success">${prod.status}</p>
                         <div class="row">
-                            <div class="col-md-8 my-2">
+                            <div class="col-md-10 my-2">
                                 <a href="#" class="btn btnDetails text-light w-100">Details</a>
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-8 my-2">
+                            <div class="col-md-10 my-2">
                                 <a href="#" class="btn text-light bg-danger w-100">Delete</a>
                             </div>
                         </div>
