@@ -10,16 +10,11 @@
   }
 
 
-.navbar {
-    background-color: #37315e;
-}
-
 .navside {
     width: 230px;
     height: 100vh;
     position: fixed;
     margin-left: -300px;
-    background-color: #37315e;
     transition: 0.4s;
 }
 .header-nrt {
@@ -34,20 +29,13 @@
     color: white;
 }
 
-.nav-link:active,
-.nav-link:focus,
+.nav-link {
+    color: #dcd3ebe1;
+}
+
 .nav-link:hover {
     background-color: #ffffff26;
-}
-
-.dropdown-menu {
-    background-color: #37315e;
-}
-
-.dropdown-item:active,
-.dropdown-item:focus,
-.dropdown-item:hover {
-    background-color: #ffffff26;
+    color: white;
 }
 
 .nav-item {
@@ -58,6 +46,7 @@
 
 .faf {
     margin-right: 10px;
+    font-size: 14px;
 }
 
 .login-info {
@@ -79,19 +68,16 @@
 }
 
 .active-cont {
-    margin-left: 250px;
+    margin-left: 230px;
 }
 
-.menu-btn {
-    background-color: #37315e;
-    color: #fff;
-}
 
-.menu-btn:focus {
-    box-shadow: 0 0 0 0.25rem #7952b30e;
-}
+
+
+.menu-btn ,
 .menu-btn:hover {
-    color: white;
+    color:#dcd3ebe1;
+    margin-left: 80px;
 }
 
 #button-addon2 {
@@ -100,10 +86,3 @@
     background-color: #da4167;
 }
 
-.sizeChart {
-    height: 300px;
-}
-
-.btnDetails {
-    background-color: #37315e;
-}

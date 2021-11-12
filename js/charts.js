@@ -1,26 +1,48 @@
-// Line Chart for Orders
-var ordersChart = document.getElementById("myAreaChart").getContext('2d');
-var myLineChart = new Chart(ordersChart, {
-    type: 'line',
-    data: {
-        labels: ["Jan 1", "Jan 5", "Jan 9", "Jan 13", "Jan 17", "Jan 21", "Jan 25"],
-        datasets: [{
-            data: [9000, 20500, 10000, 20200, 29200, 27000, 40000],
-            borderColor: [
-                'rgba(218, 65, 103, 1)',
-            ],
-            fill: true,
-            borderWidth: 3,
-            backgroundColor:"#37315e79",
-        },
-        ]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
 
+// Line Chart for Orders
+var ordersChart = document.getElementById("myAreaChart");
+var myOrdersChart = new Chart(ordersChart, {
+  type: 'line',
+  data: {
+    labels: ["Aug 1", "Aug 2", "Aug 3", "Aug 4", "Aug 5", "Aug 6", "Aug 7", "Aug 8", "Aug 9", "Aug 10", "Aug 11", "Aug 12", "Aug 13"],
+    datasets: [{
+      lineTension: 0.1,
+      borderColor: "rgba(218,65,103,0.6)",
+      pointBackgroundColor: "rgba(218,65,103,0.8)",
+      data: [7559, 30201, 24201, 20012, 19501, 26011, 32420, 35012, 30087, 29515, 20215, 35785, 39741],
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'date'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 7,
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 40000,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          color: "rgb(55, 49, 94, 0.2)",
+        }
+      }],
+    },
+    legend: {
+      display: false
     }
+  }
 });
+
+
 // Bar Chart for Visitor
 var visitorChart = document.getElementById("myBarChart").getContext('2d');
 var myBarChart = new Chart(visitorChart, {
@@ -28,46 +50,62 @@ type: 'bar',
 data: {
 labels: ["January", "February", "March", "April", "May", "June", "July"],
 datasets: [{
-label: "Man",
-data: [4700, 9950, 14200, 9000, 8200, 10500, 12000],
-backgroundColor: [
-'#37315e',
-],
-},
-{
-label: "Women",
-data: [5000, 9200, 15000, 9300, 8250, 10800, 11990],
-backgroundColor: [
-'rgba(218, 65, 103, 1)',
-],
-}
-]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
+        
+    label: "Man",
+    data: [4700, 9950, 14200, 9000, 8200, 10500, 12000],
+    backgroundColor: '#37315e' 
+    },
+    {
 
-}
+    label: "Women",
+    data: [5000, 9200, 15000, 9300, 8250, 10800, 11990],
+    backgroundColor:'rgba(220, 92, 124, 1)'
+    }]
+},
+
+options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'month'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 8
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 15000,
+          maxTicksLimit: 8
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: true
+    }
+  }
+
 });
 
 
 // Pie Chart for Cities
-var citiesChart = document.getElementById("myPieChart").getContext('2d');
-var myPieChart = new Chart(citiesChart, {
-type: 'pie',
-data: {
-labels: ["Riyadh", "Jeddah", "Macca", "Abha"],
-datasets: [{
-data: [30, 50, 10, 40, 20],
-backgroundColor: ["#37315e", "rgba(218, 65, 103, 1)", "#37315e", "rgba(218, 65, 103, 1)"],
-hoverBackgroundColor: ["#7952b3", "rgba(220, 92, 124, 1)", "#7952b3", "rgba(220, 92, 124, 1)"],
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: false,
-
-}
+var citiesChart = document.getElementById("myPieChart");
+var myCitiesChart = new Chart(citiesChart, {
+  type: 'pie',
+  data: {
+    labels: ["Riyadh", "Jaddah", "Sharqia", "Mecca"],
+    datasets: [{
+      data: [40, 20.2, 10.11, 30],
+      backgroundColor: ["rgba(218,65,103,0.8)", "rgb(55, 49, 94, 0.8)", "rgba(218,65,99,0.8)", "rgb(25, 39, 90, 0.8)"],
+    }],
+  },
 });
 
 // Liner Chart for Rat
@@ -78,20 +116,34 @@ var myLinearChart = new Chart(ratChart, {
         labels: ["January", "February", "March", "April", "May", "June"],
         datasets: [{
             data: [1, 1.5, 2.7, 4, 4.5, 3.75],
-            borderColor: [
-                'rgba(218, 65, 103, 1)',
-            ],
+            borderColor: "rgba(218,65,103,0.6)",
+            pointBackgroundColor: "rgba(218,65,103,0.8)",
             borderWidth: 3,
             fill: true,
-            backgroundColor:"#37315e79",
             lineTension: 0.4,
         },
         ]
     },
     options: {
-        responsive: true,
-        maintainAspectRatio: false,
-
-        
-    }
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: false
+            },
+          }],
+          yAxes: [{
+            ticks: {
+              min: 0,
+              max: 5,
+              maxTicksLimit: 6
+            },
+            gridLines: {
+              display: true
+            }
+          }],
+        },
+        legend: {
+          display: false
+        }
+      }
 });

@@ -1,31 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const http = new XMLHttpRequest();
-    http.open("GET", "./json/cardsInfo.json");
-    http.onload = () => {
-        if(http.readyState === 4 && http.status === 200) {
-            let Card = JSON.parse(http.responseText);
-
-            Card.forEach(card => {
-                renderHtml(card);
-            });
-        }
-    };
-    http.send();
-});
+const Card = [
+    {
+        "orders" : "Sales",
+        "price" : "3450.99 SAR"
+    },
+    {
+        "orders" : "Orders",
+        "price" : "1890 SAR"
+    },
+    {
+        "orders" : "Visitors",
+        "price" : "352 SAR"
+    },
+    {
+        "orders" : "Conversion Rate",
+        "price" : "3.75%"
+    }
+];
 
 let containerCards = document.getElementById('colCard');
-function renderHtml(card) {  
 
+Card.forEach(card => {
     let info = `
-        <div class="col-md-3 my-2">
-            <div class="card bg-danger bg-gradient m-15 text-center" style="max-width: 18rem;">
-                <div class="card-body text-light">
-                    <h5>${card.orders}</h5>
-                    <p>${card.price}</p>
-                </div>
-            <div class="card-footer text-left"><button type="button" class="btn btn-link text-light">View Details</button>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-pink mb-3 text-center">
+            <div class="card-body text-light">
+                <h5>${card.orders}</h5>
+                <p>${card.price}</p>
             </div>
-            </div>
-        </div>`;
-        containerCards.innerHTML +=info;
-}
+        <div class="card-footer text-left"><button type="button" class="btn btn-link text-light">View Details</button>
+        </div>
+        </div>
+    </div>`;
+
+    containerCards.innerHTML +=info;
+});
+

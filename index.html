@@ -21,7 +21,8 @@
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
   <!--for Chart-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
   <!--for dataTable-->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -31,7 +32,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top bg-purple">
     <div class="container-fluid">
       <a href="index.html" class="header-nrt">Nrt Solution</a>
       <button class="btn menu-btn" aria-label="button"><i class="fas fa-align-justify m-1"></i>
@@ -58,34 +59,34 @@
       </div>
     </div>
   </nav>
-  <nav class="navbar navbar-expand d-flex flex-column align-item-start navside mt-5" id="sidebar">
-    <ul class="navbar-nav d-flex flex-column mt-5 w-100">
+  <nav class="navbar navbar-expand d-flex flex-column align-item-start navside mt-5 bg-purple" id="sidebar">
+    <ul class="navbar-nav d-flex flex-column mt-3 w-100">
       <li class="nav-item">
-        <a href="#" class="nav-link text-light pl-4"><i class="fas faf fa-home"></i>Home</a>
+        <a href="#" class="nav-link pl-4"><i class="fas faf fa-home"></i>Home</a>
       </li>
       <li class="nav-item">
-        <a href="products.html" class="nav-link text-light pl-4"><i class="fas faf fa-tshirt"></i>Product</a>
+        <a href="products.html" class="nav-link pl-4"><i class="fas faf fa-tshirt"></i>Product</a>
       </li>
       <li class="nav-item dropdown w-100">
-        <a class="nav-link dropdown-toggle text-light pl-4" href="#" id="navbarDropdown" role="button"
+        <a class="nav-link dropdown-toggle pl-4" href="#" id="navbarDropdown" role="button"
           data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas faf fa-table"></i>Orders</a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul class="dropdown-menu bg-purple" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item text-light" href="#">Action</a></li>
           <li><a class="dropdown-item text-light" href="#">Another action</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown w-100">
-        <a class="nav-link dropdown-toggle text-light pl-4" href="#" id="navbarDropdown2" role="button"
+        <a class="nav-link dropdown-toggle pl-4" href="#" id="navbarDropdown2" role="button"
           data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas faf fa-chart-line"></i>Reports</a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+        <ul class="dropdown-menu bg-purple" aria-labelledby="navbarDropdown2">
           <li><a class="dropdown-item text-light" href="#">Action</a></li>
           <li><a class="dropdown-item text-light" href="#">Another action</a></li>
         </ul>
       </li>
       <li class="nav-item w-100">
-        <a href="#customers" class="nav-link text-light pl-4"><i class="fas faf fa-users"></i>Customers</a>
+        <a href="customers.html" class="nav-link pl-4"><i class="fas faf fa-users"></i>Customers</a>
       </li>
     </ul>
     <div class="login-info">
@@ -95,8 +96,12 @@
   </nav>
   <section class="my-container">
     <br>
-    <br>
-    <h2 class="m-4">Dashboard</h2>
+    <div class="m-5"> 
+      <h1>Dashboard</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </div>
     <div class="row m-3" id="colCard">
       <!--Load Cards-info JSON-->
     </div>
@@ -107,7 +112,7 @@
         <div class="card">
           <div class="card-header"><i class="fas faf fa-table"></i>Orders</div>
           <div class="card-body">
-            <canvas id="myAreaChart" class="sizeChart"></canvas>
+            <canvas id="myAreaChart" width="100%" height="40"></canvas>
           </div>
         </div>
       </div>
@@ -115,7 +120,7 @@
         <div class="card">
           <div class="card-header"><i class="far faf fa-eye"></i>Visitor</div>
           <div class="card-body">
-            <canvas id="myBarChart" class="sizeChart"></canvas>
+            <canvas id="myBarChart" width="100%" height="40"></canvas>
           </div>
         </div>
       </div>
@@ -125,7 +130,7 @@
         <div class="card">
           <div class="card-header"><i class="fas faf fa-map-marker-alt"></i>Visitors Citites</div>
           <div class="card-body">
-            <canvas id="myPieChart" class="sizeChart"></canvas>
+            <canvas id="myPieChart" width="100%" height="40"></canvas>
           </div>
         </div>
       </div>
@@ -133,7 +138,7 @@
         <div class="card">
           <div class="card-header"><i class="fas faf fa-star"></i>Customers Rat</div>
           <div class="card-body">
-            <canvas id="myLinearChart" class="sizeChart"></canvas>
+            <canvas id="myLinearChart" width="100%" height="40"></canvas>
           </div>
         </div>
       </div>
@@ -165,6 +170,7 @@
     </nav>
   </section>
 
+  
   <script src="http://code.tidio.co/el9agz4pqfntbnidchvlswyoc7vokf2p.js" async></script>
   <script src="js/scripts.js"></script>
   <script src="js/card.js"></script>
